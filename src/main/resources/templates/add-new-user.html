@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Add New Staff</title>
+		
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	<body>
+		
+		<div class="container" align="center">
+		
+		</br></br></br></br></br>
+			<h3>Add New User Here</h3>
+			<hr/>
+			
+			<form th:action="@{/saveUser}" th:object="${newUserForm}" method="POST">
+				
+				<input type="text" th:field="*{firstName}" class="form-control col-4 mb-4" placeholder="Enter First Name" />
+				
+				<input type="text" th:field="*{lastName}" class="form-control col-4 mb-4" placeholder="Enter Last Name" />
+				
+				<input type="text" th:field="*{emailId}" class="form-control col-4 mb-4" placeholder="Enter Email Id" />
+				
+				<input type="text" th:field="*{salary}" class="form-control col-4 mb-4" placeholder="Enter Salary" />
+				
+				<input type="text" th:field="*{designation}" class="form-control col-4 mb-4" placeholder="Enter Designation" />
+				
+				<button type="submit" class="btn btn-primary col-1">Save</button>
+				<input type="hidden" th:field="*{id}" />
+				<a th:href="@{/userlist}" class="btn btn-danger m-2">Cancel</a>
+			</form>
+			<hr/>
+			
+		</div>
+		
+	</body>
+</html>
